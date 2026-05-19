@@ -3,48 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import CountdownTimer from "@/components/CountdownTimer";
-import EmailSignup from "@/components/EmailSignup";
 import VideoBackground from "@/components/VideoBackground";
-
-const partners = [
-  {
-    name: "Zand Bank",
-    logo: "https://static.wixstatic.com/media/6fd8ff_98248e6e03064dad85fe399b97caf3dc~mv2.png/v1/fill/w_275,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Zand%20bank.png",
-    width: 120,
-    height: 35,
-  },
-  {
-    name: "Finalytics",
-    logo: "https://static.wixstatic.com/media/6fd8ff_a9d510f8f67c4feaa852ce3c245a09fc~mv2.png/v1/fill/w_275,h_84,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Finalytics%20logo.png",
-    width: 120,
-    height: 37,
-  },
-  {
-    name: "DigiShares",
-    logo: "https://static.wixstatic.com/media/6fd8ff_6774eb11d37c48f9b73f30ce58070226~mv2.png/v1/fill/w_275,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Logo_DigiShares.png",
-    width: 120,
-    height: 32,
-  },
-  {
-    name: "SumSub",
-    logo: "https://static.wixstatic.com/media/6fd8ff_d855a0d349b44e42814785a3e59d5a84~mv2.png/v1/fill/w_275,h_101,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/696a166e80bee1267bb5aa6b_sumsub-logo.png",
-    width: 120,
-    height: 45,
-  },
-  {
-    name: "HackenAI",
-    logo: "https://static.wixstatic.com/media/6fd8ff_ac00db4c6a974ed892b1327c5be1124f~mv2.png/v1/fill/w_275,h_125,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/hackenai-hai-logo.png",
-    width: 120,
-    height: 55,
-  },
-  {
-    name: "Relm",
-    logo: "https://static.wixstatic.com/media/6fd8ff_3106817c0e4a473da8bcdf0e54950455~mv2.png/v1/fill/w_275,h_45,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Relm%20logo.png",
-    width: 80,
-    height: 16,
-  },
-];
 
 const features = [
   {
@@ -71,8 +30,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
       </svg>
     ),
-    title: "Secure & Compliant",
-    description: "VARA-aligned with institutional custody",
+    title: "Cross-border Payments",
+    description: "Low-cost global transactions with tokenized currencies",
   },
 ];
 
@@ -188,7 +147,7 @@ export default function ComingSoonPage() {
                 key={f.title}
                 whileHover={{ y: -3 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="flex flex-col items-center gap-3 px-4 py-5 rounded-2xl border border-white/[0.07] bg-white/[0.03] backdrop-blur-sm hover:border-[#FF6B00]/30 hover:bg-[#FF6B00]/5 transition-colors duration-300 cursor-default"
+                className="flex flex-col items-center gap-3 px-4 py-5   rounded-2xl border border-white/[0.07] bg-white/[0.03] backdrop-blur-sm hover:border-[#FF6B00]/30 hover:bg-[#FF6B00]/5 transition-colors duration-300 cursor-default"
               >
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#FF6B00]/10 text-[#FF6B00]">
                   {f.icon}
@@ -199,54 +158,6 @@ export default function ComingSoonPage() {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
-
-          {/* Partner Logo Marquee */}
-          <motion.div variants={fadeUp} className="w-full mb-10">
-            <p className="text-[10px] tracking-[0.25em] uppercase text-white/40 mb-5 font-display">
-              Powered By
-            </p>
-            <div className="relative overflow-hidden w-full">
-              {/* Edge fades */}
-              <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-[#0B0B0F] to-transparent pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-[#0B0B0F] to-transparent pointer-events-none" />
-              <div className="animate-marquee items-center">
-                {[...partners, ...partners].map((p, i) => (
-                  <div
-                    key={`${p.name}-${i}`}
-                    className="flex-shrink-0 flex items-center justify-center px-5 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-[#FF6B00]/25 hover:bg-[#FF6B00]/5 transition-all duration-300 cursor-default mx-2"
-                  >
-                    <Image
-                      src={p.logo}
-                      alt={p.name}
-                      width={p.width}
-                      height={p.height}
-                      unoptimized
-                      className="h-6 w-auto opacity-50 hover:opacity-80 transition-opacity"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Divider */}
-          <motion.div variants={fadeUp} className="w-px h-8 bg-gradient-to-b from-transparent via-white/20 to-transparent mb-8" />
-
-          {/* Countdown */}
-          <motion.div variants={fadeUp} className="mb-10">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-white/40 mb-5 font-display">Launching In</p>
-            <CountdownTimer />
-          </motion.div>
-
-          {/* Email Signup */}
-          <motion.div variants={fadeUp} className="w-full max-w-md flex flex-col items-center gap-3">
-            <div className="w-full rounded-2xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm p-5 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
-              <p className="text-sm font-semibold text-white/90 font-display mb-1">Join the waitlist</p>
-              <p className="text-[11px] text-white/40 mb-4">Be first to access when we launch.</p>
-              <EmailSignup />
-            </div>
-            <p className="text-[10px] text-white/30">No spam. Unsubscribe anytime.</p>
           </motion.div>
         </motion.div>
       </section>

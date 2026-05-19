@@ -45,7 +45,7 @@ const teamMembers = [
 
 const stats = [
   { value: "15-20", label: "Years Avg. Experience" },
-  { value: "6", label: "Core Team Members" },
+  { value: "10", label: "Core Team Members" },
   { value: "100%", label: "VARA Committed" },
 ];
 
@@ -148,74 +148,7 @@ export default function AboutPage() {
         </div>
       </motion.section>
 
-      {/* Team */}
-      <section className="relative z-10 px-6 md:px-12 py-16 max-w-5xl mx-auto w-full">
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-[10px] tracking-[0.25em] uppercase text-white/40 text-center mb-8 font-display"
-        >
-          The Team
-        </motion.p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {teamMembers.map((member, i) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.07, duration: 0.5 }}
-              whileHover={{ y: -3 }}
-              className="group p-5 rounded-2xl border border-[#2A2A38]/60 bg-[#13131A]/50 hover:border-[#FF6B00]/30 hover:bg-[#13131A] transition-all duration-300 cursor-default"
-            >
-              <div className="flex items-start gap-3.5 mb-3.5">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#FF6B00]/20 to-[#FF6B00]/5 border border-[#FF6B00]/20 flex items-center justify-center text-[#FF6B00] text-sm font-bold shrink-0 font-display shadow-[0_0_12px_rgba(255,107,0,0.1)]">
-                  {member.name.charAt(0)}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-[#F0EDE6] text-sm leading-tight font-display">{member.name}</h3>
-                  <p className="text-[10px] text-[#FF6B00]/70 font-medium mt-0.5 font-display">{member.role}</p>
-                </div>
-              </div>
-              <p className="text-xs text-[#6B6B80] leading-relaxed pl-[52px]">{member.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <motion.section
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="relative z-10 px-6 md:px-12 py-16"
-      >
-        <div className="max-w-xl mx-auto text-center">
-          <div className="relative p-10 rounded-2xl border border-[#FF6B00]/20 bg-[#13131A]/60 overflow-hidden shadow-[0_0_60px_rgba(255,107,0,0.05)]">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,107,0,0.07)_0%,transparent_65%)]" />
-            <div className="relative z-10">
-              <h2 className="text-xl md:text-2xl font-bold text-[#F0EDE6] mb-3 font-display">
-                Ready to Get Started?
-              </h2>
-              <p className="text-sm text-[#6B6B80] leading-relaxed mb-8">
-                Join the waitlist and be among the first to access tokenized real-world assets.
-              </p>
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-[#FF6B00] text-[#0B0B0F] font-semibold text-sm tracking-wide hover:bg-[#FF8533] active:bg-[#CC5500] transition-colors font-display shadow-[0_0_24px_rgba(255,107,0,0.3)]"
-              >
-                Join the Waitlist
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
+      
       {/* Footer */}
       <footer className="relative z-10 border-t border-[#2A2A38]/40 py-4 px-6 md:px-12 mt-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">

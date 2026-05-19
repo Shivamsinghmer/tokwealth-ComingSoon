@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:chief28.wixstudio.com)",
-      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --yes)"
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(Read \"C:\\\\Users\\\\mersh\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-mersh-OneDrive-Desktop-tokwealth\\\\6e131a5e-5630-4266-847e-6a2e3a50e788\\\\tasks\\\\b2lv0m0dq.output\")"
     ]
   }
 }
